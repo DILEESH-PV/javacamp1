@@ -42,8 +42,14 @@ public class Calculator {
                     System.out.println("Enter 2 nos");
                     n1=scanner.nextInt();
                     n2=scanner.nextInt();
-                    ans =n1/n2;
-                    System.out.println("div="+ans);
+                    try
+                    {
+                      ans =n1/n2;
+                      System.out.println("div="+ans);
+                    }catch(ArithmeticException e){
+                        System.out.println("Division by zero");
+                    }
+
                     break;
                 case 5: System.exit(0);
             }}
