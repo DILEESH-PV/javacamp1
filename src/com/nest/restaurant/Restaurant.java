@@ -58,11 +58,12 @@ public class Restaurant {
                         case 6:
                             System.out.println("Total Quantity= " + quantity);
                             System.out.println("Amount= " + total);
-                            System.out.println("Thank you for visiting");
+                            System.out.println("Thank you for visiting ");
                         case 7:
                             System.exit(0);
                             break;
                         default:
+
                             System.out.println("Please select a valid item");
                     }
                     break;
