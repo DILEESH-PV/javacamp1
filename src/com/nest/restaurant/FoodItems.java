@@ -54,4 +54,6 @@ public class FoodItems {
     public void setBurger(Integer burger) {
         this.burger = burger;
     }
+
+
 }
