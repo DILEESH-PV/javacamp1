@@ -17,7 +17,7 @@ public class Restaurant {
         FoodItems takeAwayFood = new FoodItems(12, 18, 25, 55, 65);
         HashMap<String,String> map=new HashMap<>();
         ArrayList<String> transactionlist=new ArrayList<>();
-        Random ra=new Random();
+        Random ra=new Random();try{
         while (true) {
             System.out.println("*************************************");
             System.out.println("*************************************");
@@ -27,6 +27,7 @@ public class Restaurant {
             System.out.println("   3. View all transaction");
             System.out.println("   4. EXIT");
             choice1 = scanner.nextInt();
+
             switch (choice1) {
                 case 1:
                     System.out.println("*************************************");
@@ -39,7 +40,7 @@ public class Restaurant {
                     System.out.println("   5.Burger ---------------60Rs");
                     System.out.println("   6.****** GENERATE BILL *****");
                     System.out.println("   7.EXIT                      ");
-                    choice2=scanner.nextInt();
+                    choice2 = scanner.nextInt();
                     switch (choice2) {
                         case 1:
                             System.out.println("*************************************");
@@ -89,19 +90,19 @@ public class Restaurant {
                         case 6:
                             System.out.println("*************************************");
                             System.out.println("  Please Enter Your Name");
-                            name= scanner.next();
+                            name = scanner.next();
                             System.out.println("\n");
-                            invoice= ra.nextInt(100);
+                            invoice = ra.nextInt(100);
                             System.out.println("                HOTEL HORIZON INTERNATIONAL");
-                            System.out.println("   Invoice Number ---- "+invoice);
+                            System.out.println("   Invoice Number ---- " + invoice);
                             //System.out.println("\n");
                             //System.out.println("*************************************");
                             System.out.println("   Items              Price       Quantity\n\n");
-                            for(int i=0;i<foodItem.size();i++) {
+                            for (int i = 0; i < foodItem.size(); i++) {
                                 System.out.println(foodItem.get(i) + "------- " + price.get(i) + " Rs    *     " + tquantity.get(i));
                             }
                             System.out.println("\n");
-                            System.out.println("   Total Bill -------- "+total+" Rs");
+                            System.out.println("   Total Bill -------- " + total + " Rs");
                             System.out.println("******* THANK YOU FOR VISITING *******");
                             System.out.println("\n\n");
 
@@ -109,12 +110,12 @@ public class Restaurant {
                             foodItem.clear();
                             price.clear();
                             tquantity.clear();
-                            map.put("Name",name);
-                            map.put("Total",String.valueOf(total));
-                            map.put("Mode","Dine Inn");
-                            map.put("Invoice",String.valueOf(invoice));
+                            map.put("Name", name);
+                            map.put("Total", String.valueOf(total));
+                            map.put("Mode", "Dine Inn");
+                            map.put("Invoice", String.valueOf(invoice));
                             transactionlist.add(String.valueOf(map));
-                            total=0;
+                            total = 0;
                             break;
                         case 7:
                             System.exit(0);
@@ -135,7 +136,7 @@ public class Restaurant {
                     System.out.println("   5.Burger -----------------65Rs");
                     System.out.println("   6.******* GENERATE BILL ******");
                     System.out.println("   7.EXIT                        ");
-                    choice2=scanner.nextInt();
+                    choice2 = scanner.nextInt();
                     switch (choice2) {
                         case 1:
                             System.out.println("   Enter The Quantity");
@@ -179,29 +180,29 @@ public class Restaurant {
                             break;
                         case 6:
                             System.out.println("   Please Enter Your Name");
-                            name= scanner.next();
+                            name = scanner.next();
                             System.out.println("\n");
-                            invoice= ra.nextInt(100);
+                            invoice = ra.nextInt(100);
                             System.out.println("                HOTEL HORIZON INTERNATIONAL");
-                            System.out.println("   Invoice Number ---- "+invoice);
+                            System.out.println("   Invoice Number ---- " + invoice);
                             System.out.println("   Items              Price       Quantity\n\n");
-                            for(int i=0;i<foodItem.size();i++) {
+                            for (int i = 0; i < foodItem.size(); i++) {
                                 System.out.println(foodItem.get(i) + "------- " + price.get(i) + " Rs    *     " + tquantity.get(i));
                             }
                             System.out.println("\n");
-                            System.out.println("   Total Bill -------- "+total+" Rs");
+                            System.out.println("   Total Bill -------- " + total + " Rs");
                             //System.out.println("");
                             System.out.println("******* THANK YOU FOR VISITING *******");
                             System.out.println("\n\n");
                             foodItem.clear();
                             price.clear();
                             tquantity.clear();
-                            map.put("Name",name);
-                            map.put("Total",String.valueOf(total));
-                            map.put("mode","Take Away");
-                            map.put("Invoice",String.valueOf(invoice));
+                            map.put("Name", name);
+                            map.put("Total", String.valueOf(total));
+                            map.put("mode", "Take Away");
+                            map.put("Invoice", String.valueOf(invoice));
                             transactionlist.add(String.valueOf(map));
-                            total=0;
+                            total = 0;
                             break;
                         case 7:
                             System.exit(0);
@@ -209,17 +210,20 @@ public class Restaurant {
                         default:
                             System.out.println("Please select an valid item");
                             break;
-                    }break;
+                    }
+                    break;
                 case 3:
                     System.out.println("****** The Total Transaction is ******\n");
                     System.out.println(transactionlist);
                     break;
-                    case 4:
-                        System.exit(0);
+                case 4:
+                    System.exit(0);
                 default:
                     System.out.println("Please a valid option");
                     break;
-                }
             }
+        } }catch (Exception e){
+                System.out.println("Input Mismatch");}
+
         }
     }
