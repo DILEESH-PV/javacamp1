@@ -219,11 +219,11 @@ public class Restaurant {
                 case 4:
                     System.exit(0);
                 default:
-                    System.out.println("Please a valid option");
+                    System.out.println("Please select a valid option");
                     break;
             }
         } }catch (Exception e){
-                System.out.println("Input Mismatch");}
+                System.out.println("Input Mismatched -- Exited");}
 
         }
     }
